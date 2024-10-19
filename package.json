@@ -1,0 +1,17 @@
+{
+  "name": "com.vicky.unity-character-controller3d",
+  "version": "1.0.0",
+  "displayName": "UnityCharacterController3D",
+  "description": "3D Character controller",
+  "unity": "2022.0",
+  "documentationUrl": "https://example.com/",
+  "changelogUrl": "https://example.com/changelog.html",
+  "licensesUrl": "https://example.com/licensing.html",
+  "author": {
+    "name": "Vicky"
+  },
+  "dependencies": {
+    "com.unity.cinemachine": "2.10.1",
+    "com.unity.inputsystem": "1.11.2"
+  }
+}
