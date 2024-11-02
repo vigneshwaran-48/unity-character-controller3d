@@ -38,10 +38,12 @@ namespace charactercontroller {
         private PlayerInput _playerInput;
         private Transform _cameraTransform;
         private bool _isGrounded;
+        private Animator _animator;
 
         void Awake() {
             _rigidbody = GetComponent<Rigidbody>();
             _playerInput = GetComponent<PlayerInput>();
+            _animator = GetComponent<Animator>();
             _cameraTransform = Camera.main.transform;
         }
 
@@ -55,6 +57,11 @@ namespace charactercontroller {
         void FixedUpdate() {
             GroundCheck();
             Vector2 move = _playerInput.actions["Move"].ReadValue<Vector2>();
+
+            // Animate character
+            _animator.SetFloat("x", move.x);
+            _animator.SetFloat("y", move.y);
+
             if (move == Vector2.zero) {
                 // Stop movement when no input is detected
                 _rigidbody.velocity = new Vector3(0f, _rigidbody.velocity.y, 0f);
@@ -69,6 +76,7 @@ namespace charactercontroller {
             movement.y = _rigidbody.velocity.y;
 
             _rigidbody.velocity = movement;
+
 
             // Rotate the character to the forward moving direction.
             if (movement != Vector3.zero) {
