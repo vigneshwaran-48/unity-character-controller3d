@@ -137,7 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88886bc9da170e09e8fd61b17c4a00c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _walkSpeed: 5
+  _runSpeed: 10
   _rotationSpeed: 5
   _characterModelTransform: {fileID: 1317624837047804868}
   _jumpForce: 5
